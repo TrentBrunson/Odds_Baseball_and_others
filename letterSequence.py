@@ -29,38 +29,28 @@ choice = "Y"
 choice = "Y"
 
 while choice.upper() == "Y":
-    print("This program will determine if you have an abecedarian word.")
+    print("This program will determine if your phrase has three letters in sequential order.")
     try:
-        i = 0
-        sequential = False
+        # i = 0
+        # sequential = False
         entry = input("Enter you word:\n")
         userWord = entry.lower().replace(" ","")
         if len(userWord)<3:
             print("You need to enter a word or phrase longer than 3 characters.")
         else:
-            print(userWord)
             sequential = False
-            i,j = 0, 1
+            i,j = 0,1
             for i in range(len(userWord)-1):
-                if (ord(userWord[i])+1) == ord(userWord[i+1]):
-                    # print(sequential, i, j)
+                print(i, userWord, len(userWord))
+                if (ord(userWord[i]) + 1) == (ord(userWord[i+1])):
+                    print(ord(userWord[i]), (ord(userWord[i+1])))
                     j += 1
-                    # print(i,j)
+                    print(sequential, i, j)
                     if j == 3:
-                        # print(j)
                         sequential = True
                 else:
-                    j=1
-            print(sequential)
-        # for i in range(len(userWord) - 1):
-        #     if userWord[i] > userWord[i + 1]:
-        #         alpha = False
-        #         break
-        #     else: alpha = True
-        # if alpha == False:
-        #     print(f"Your word '{entry}' does not have its letters in alphabetical order.")
-        # else:
-        #     print(f"Your word '{entry}' has all of its letters in alphabetical order!")
+                    j = 1
+            print(userWord, sequential)
     except ValueError:
         print("Input words with letters only.\n")
 
@@ -84,13 +74,13 @@ sequential
 # %%
 ord(l)
 # %%
-l = 'asdfgdaabc'
+l = 'abc'
 all(ord(l[i+1])-ord(l[i]) == 1 for i in range(len(l)-1))
 
 # %%
-word = 'zazfzdzfzg'
+word = input('enter word: ')
 sequential = False
-i,j = 0, 1
+i,j = 0,1
 for i in range(len(word)-1):
     if (ord(word[i]) + 1) == (ord(word[i+1])):
         print(ord(word[i]), (ord(word[i+1])))
@@ -99,10 +89,11 @@ for i in range(len(word)-1):
         if j == 3:
             sequential = True
     else:
+        j = 1
         continue
 sequential
 # %%
-word = 'zazfzdzfzg'
+word = 'ancde'
 sequential = False
 i,j = 0, 0
 for i in range(len(word)-1):
@@ -112,6 +103,7 @@ for i in range(len(word)-1):
         if j == 3:
             sequential = True
     else:
+        j = 1
         continue
 sequential
 # %%
