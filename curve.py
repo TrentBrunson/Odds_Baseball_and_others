@@ -89,11 +89,12 @@ gradeDict.update({'C':countC})
 gradeDict.update({'D':countD})
 gradeDict.update({'F':countF})
 print(gradeDict)
-#%%
 with open("data/Scores-and-Letter-Grades.txt", "w") as file:
     for row in newList:
         # file.writelines("%s\n" % item for item in newList)
         file.writelines(row)
+#%%
+
 
 print(
     f"Count:\t\t\t{counter}\n"
@@ -102,12 +103,12 @@ print(
     f"Maximum:\t\t{top}\n"
     f"Minimum:\t\t{bottom}\n\n"
     f"Curved Grade - Cut Off Points (to 1 decimal place)\n"
-    f"A:\t{}\n"
-    f"B:\t{}\n"
-    f"C:\t{}\n"
-    f"D:\t{}\n\n"
+    f"A:   {round(letterA,1)}\n"
+    f"B:   {round(letterB,1)}\n"
+    f"C:   {round(letterC,1)}\n"
+    f"D:   {round(letterD,1)}\n\n"
     f"GRADE DISTRIBUTION AFTER CURVING GRADES USING CUT \nOFF POINTS FROM ABOVE\n"
-    f"A:\t{}\tB:\t{}\tC:\t{}\tD:\t{}\tF:\t{}\t"
+    f"A:  {gradeDict['A']}\tB:  {gradeDict['B']}\tC:  {gradeDict['C']}\tD:  {gradeDict['D']}\tF:  {gradeDict['F']}\t"
 )
 # %%
 
