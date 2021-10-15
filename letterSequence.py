@@ -32,6 +32,7 @@ while choice.upper() == "Y":
     print("This program will determine if you have an abecedarian word.")
     try:
         i = 0
+        sequential = False
         entry = input("Enter you word:\n")
         userWord = entry.lower().replace(" ","")
         print(userWord)
@@ -49,25 +50,16 @@ while choice.upper() == "Y":
 
     choice = input("Would you like to try again? (Y/N) ")
 # %%
-entry = input("Enter you word:\n")
-userWord = entry.lower().replace(" ","")
-# temp = userWord.replace(" ","")
-print(entry, userWord)
-# %%
-word = 'afdfg'
+word = 'zazfzdzfzg'
 sequential = False
 i,j = 0, 0
 for i in range(len(word)-1):
     if word[i] < word[i+1]:
+        print(sequential, i, j)
         j += 1
         if j == 3:
             sequential = True
     else:
         continue
 sequential
-# %%
-first = "ABC D E"
-first = first.lower()
-first = first.replace(" ","")
-first
 # %%
