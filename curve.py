@@ -20,3 +20,91 @@ HINT: A dictionary is an efficient tool for accumulating counts.
 • Display a grade distribution table (see Figure 2)
 """
 #%%
+scoreList = []
+file = "data\Scores.txt"
+with open (file) as f:
+    for line in f:
+        line = int(line.strip())
+        scoreList.append(line)
+scoreList.sort()
+# %%
+total, counter = 0, 0
+for score in scoreList:
+    counter += 1
+    total += score
+mean = total / counter
+top = max(scoreList)
+bottom = min(scoreList)
+
+mid = int(round(len(scoreList)/2, 0))
+
+if counter % 2 == 0:
+    median = (scoreList[mid] + scoreList[mid+1])/2
+    print(scoreList[mid], mid, scoreList[mid+1])
+else:
+    median = scoreList[mid+1]
+
+print(counter,total,mean,median,top, bottom)
+
+scoreSum = 0
+for score in scoreList:
+    scoreSum = scoreSum + (score - mean)**2
+stdev = (scoreSum / counter)**(1/2)
+
+# grade cut offs
+letterA = mean + 1.5 * stdev
+letterB = mean + .5 * stdev
+letterC = mean - .5 * stdev
+letterD = mean - 1.5 * stdev
+letterF = mean - 1.5 * stdev
+
+countA = 0
+countB = 0
+countC = 0
+countD = 0
+countF = 0
+gradeDict = {'A':0,'B':0,'C':0,'D':0,'F':0}
+
+for score in scoreList:
+    if score >= letterA:
+        countA += 1
+    elif score >= letterB:
+        countB += 1
+    elif score >= letterC:
+        countC += 1
+    elif score >= letterD:
+        countD += 1
+    else:
+        countF += 1
+
+
+
+        gradeDict.update()
+#%%
+print(
+    f"Count:\t\t\t{counter}\n"
+    f"Average:\t\t{round(mean,2)}\n"
+    f"Standard deviation:\t{round(stdev,2)}\n"
+    f"Maximum:\t\t{top}\n"
+    f"Minimum:\t\t{bottom}\n\n"
+    f"Curved Grade - Cut Off Points (to 1 decimal place)\n"
+    f"A:\t{}\n"
+    f"B:\t{}\n"
+    f"C:\t{}\n"
+    f"D:\t{}\n\n"
+    f"GRADE DISTRIBUTION AFTER CURVING GRADES USING CUT \nOFF POINTS FROM ABOVE\n"
+    f"A:\t{}\tB:\t{}\tC:\t{}\tD:\t{}\tF:\t{}\t"
+)
+# %%
+
+# %%
+mid = len(scoreList)/2
+mid
+# %%
+4**2
+
+# %%
+4**(1/2)
+# %%
+13**1/2
+# %%
