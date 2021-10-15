@@ -67,12 +67,15 @@ def userInput():
     # header telling user the purpose of the program and taking input
     print("This program will determine if your phrase has three letters in sequential order.")
     entry = (input("Enter you word or phrase:\n"))
-    userWord = entry.lower().replace(" ","")  
+    # remove numbers, spaces and special characters
+    userWord = ''.join(filter(str.isalpha, entry)).lower()
+    # userWord = entry.lower().replace(" ","")  
     if len(userWord)<3:  # make sure the word is long enough for proecssing
         print("You need to enter a word or phrase longer with 3 or more characters.")
-    elif (userWord.isalpha() == False):  # error handling for non-strings
-        print("Input words with letters only.\n")
-        entry = False
+    # elif (userWord.isalpha() == False):  # error handling for non-strings
+    #     print("Input words with letters only.\n")
+    #     entry = False
+    
     else: pass
     return entry, userWord
 
@@ -98,9 +101,9 @@ def result(userWord):
 
 def output(expression, entry):
     if expression == True:
-        print(f"{entry} has three sequential letters.", expression)
+        print(f"{entry} has three sequential letters.\n")
     else: 
-        print(f"{entry} does not have three sequential letters.", expression)
+        print(f"{entry} does not have three sequential letters.\n")
     return
 
 def main():
@@ -116,4 +119,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+# %%
+s = '234@ #$sd f'
+n = ''.join(filter(str.isalpha, s))
+print(n)
 # %%
