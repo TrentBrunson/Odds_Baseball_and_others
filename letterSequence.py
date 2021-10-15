@@ -54,13 +54,17 @@ userWord = entry.lower().replace(" ","")
 # temp = userWord.replace(" ","")
 print(entry, userWord)
 # %%
-for i in range(len(word)):
-    if word.i < word.(i+1):
+word = 'afdfg'
+sequential = False
+i,j = 0, 0
+for i in range(len(word)-1):
+    if word[i] < word[i+1]:
         j += 1
         if j == 3:
             sequential = True
     else:
         continue
+sequential
 # %%
 first = "ABC D E"
 first = first.lower()
