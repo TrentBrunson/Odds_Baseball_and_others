@@ -64,23 +64,37 @@ countC = 0
 countD = 0
 countF = 0
 gradeDict = {'A':0,'B':0,'C':0,'D':0,'F':0}
-
+newList = []
 for score in scoreList:
-    if score >= letterA:
+    if round(score,1) >= letterA:
         countA += 1
-    elif score >= letterB:
+        newList.append([score,'A'])
+    elif round(score,1) >= letterB:
         countB += 1
-    elif score >= letterC:
+        newList.append([score,'B'])
+    elif round(score,1) >= letterC:
         countC += 1
-    elif score >= letterD:
+        newList.append([score,'C'])
+    elif round(score,1) >= letterD:
         countD += 1
+        newList.append([score,'D'])
     else:
         countF += 1
+        newList.append([score,'F'])
 
 
-
-        gradeDict.update()
+gradeDict.update({'A':countA})
+gradeDict.update({'B':countB})
+gradeDict.update({'C':countC})
+gradeDict.update({'D':countD})
+gradeDict.update({'F':countF})
+print(gradeDict)
 #%%
+with open("data/Scores-and-Letter-Grades.txt", "w") as file:
+    for row in newList:
+        # file.writelines("%s\n" % item for item in newList)
+        file.writelines(row)
+
 print(
     f"Count:\t\t\t{counter}\n"
     f"Average:\t\t{round(mean,2)}\n"
