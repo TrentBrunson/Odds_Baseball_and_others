@@ -29,29 +29,30 @@ choice = "Y"
 choice = "Y"
 
 while choice.upper() == "Y":
+    # header telling user the purpose of the program
     print("This program will determine if your phrase has three letters in sequential order.")
-    try:
-        # i = 0
-        # sequential = False
-        entry = input("Enter you word:\n")
-        userWord = entry.lower().replace(" ","")
-        if len(userWord)<3:
-            print("You need to enter a word or phrase longer than 3 characters.")
-        else:
-            sequential = False
-            i,j = 0,1
-            for i in range(len(userWord)-1):
-                print(i, userWord, len(userWord))
-                if (ord(userWord[i]) + 1) == (ord(userWord[i+1])):
-                    print(ord(userWord[i]), (ord(userWord[i+1])))
-                    j += 1
-                    print(sequential, i, j)
-                    if j == 3:
-                        sequential = True
-                else:
-                    j = 1
-            print(userWord, sequential)
-    except ValueError:
+    entry = (input("Enter you word:\n"))
+    if (entry.isalpha == True):  # error handling for non-strings
+            userWord = entry.lower().replace(" ","")
+            if len(userWord)<3:
+                print("You need to enter a word or phrase longer than 3 characters.")
+            else:
+                sequential = False
+                i,j = 0,1
+                for i in range(len(userWord)-1):
+                    print(i, userWord, len(userWord))
+                    if (ord(userWord[i]) + 1) == (ord(userWord[i+1])):
+                        # print(ord(userWord[i]), (ord(userWord[i+1])))
+                        j += 1
+                        print(sequential, i, j)
+                        if j == 3:
+                            sequential = True
+                            print(sequential)
+                            break
+                    else:
+                        j = 1
+                print(f"{entry} has three sequential letters.", sequential)
+    else:
         print("Input words with letters only.\n")
 
     choice = input("Would you like to try again? (Y/N) ")
