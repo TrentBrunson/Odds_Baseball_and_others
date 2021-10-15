@@ -1,15 +1,3 @@
-"""
-Sequential, Consecutive Letters Checker. Write a program that asks a user to enter a word or phrase. 
-Then check the word/phrase to see if it contains three sequential, consecutive letters. 
-Example words/phrases include: “defrost”, “no problem”, “student”, “dabchick”, “crab cakes”, “indefensible”, “deficit”, “burst”,    
-“hijab”, “inopportune”, “monopoly”,  “xenophobia”, “tempestuous”, “cause and effect”, “Hi John”, “call me a cab, Carol”, etc. 
-(5 points) Use a “markdown” cell in your Jupyter Notebook to introduce your solution for this problem 
-and describe any difficulties/issues your team encountered while solving the problem
-(5 points) Use a main function to control overall program flowc.(5 points) Write a function to get the user input
-(15 points) Write a function to determine if the user input contains three sequential, consecutive letters 
-(5 points) Report to the user if the word contains three sequential, consecutive letters
-(5 points) Include a program header and appropriate comments to document your code
-"""
 #!/usr/bin/env python3#!/usr/bin/env python3
 
 # AUTHOR:     Trent Brunson
@@ -67,14 +55,15 @@ def userInput():
     # header telling user the purpose of the program and taking input
     print("This program will determine if your phrase has three letters in sequential order.")
     entry = (input("Enter you word or phrase:\n"))
-    # remove numbers, spaces and special characters
+    # remove numbers, spaces and special characters; convert to all lowercase for evaluation
+    # use .join to return string instead of iterable object from filter
     userWord = ''.join(filter(str.isalpha, entry)).lower()
     # userWord = entry.lower().replace(" ","")  
     if len(userWord)<3:  # make sure the word is long enough for proecssing
-        print("You need to enter a word or phrase longer with 3 or more characters.")
+        print("You need to enter a word or phrase longer with 3 or more characters.\n")
     # elif (userWord.isalpha() == False):  # error handling for non-strings
     #     print("Input words with letters only.\n")
-    #     entry = False
+        entry = False
     
     else: pass
     return entry, userWord
@@ -119,8 +108,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-# %%
-s = '234@ #$sd f'
-n = ''.join(filter(str.isalpha, s))
-print(n)
 # %%
