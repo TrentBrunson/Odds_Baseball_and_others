@@ -15,10 +15,10 @@ and describe any difficulties/issues your team encountered while solving the pro
 # AUTHOR:     Trent Brunson
 # COURSE:     ANLY 615
 # PROGRAM:    Abecedarian
-# PURPOSE:    Determine if the letters of a word are in alphabetical order.
-# INPUT:      user word
-# PROCESS:    treat the input as a list of characters
-# OUTPUT:     yes or no, the word is an abecedarian word
+# PURPOSE:    Determine if the word or phrase has three sequential letters.
+# INPUT:      user word/phrase
+# PROCESS:    treat the input as a list of characters and cycle through the list
+# OUTPUT:     yes or no, the word has three sequential characters
 # HONOR CODE: On my honor, as an Aggie, I have neither given 
 #             nor received unauthorized aid on this academic work.
 #%%
@@ -29,82 +29,91 @@ choice = "Y"
 choice = "Y"
 
 while choice.upper() == "Y":
-    # header telling user the purpose of the program
+    # header telling user the purpose of the program and taking input
     print("This program will determine if your phrase has three letters in sequential order.")
     entry = (input("Enter you word:\n"))
-    if (entry.isalpha == True):  # error handling for non-strings
-            userWord = entry.lower().replace(" ","")
-            if len(userWord)<3:
-                print("You need to enter a word or phrase longer than 3 characters.")
-            else:
-                sequential = False
-                i,j = 0,1
-                for i in range(len(userWord)-1):
-                    print(i, userWord, len(userWord))
-                    if (ord(userWord[i]) + 1) == (ord(userWord[i+1])):
-                        # print(ord(userWord[i]), (ord(userWord[i+1])))
-                        j += 1
-                        print(sequential, i, j)
-                        if j == 3:
-                            sequential = True
-                            print(sequential)
-                            break
-                    else:
-                        j = 1
-                print(f"{entry} has three sequential letters.", sequential)
+    # check = entry.isalpha()
+    if (entry.isalpha() == True):  # error handling for non-strings
+        # remove spaces for processing and assign to new variable
+        userWord = entry.lower().replace(" ","")  
+        if len(userWord)<3:  # make sure the word is long enough for proecssing
+            print("You need to enter a word or phrase longer than 3 characters.")
+        else:
+            # reset counters and boolean variable
+            sequential = False
+            i,j = 0,1 # initialize counters for loops
+            for i in range(len(userWord)-1): # set length of loop to user input
+                # print(i, userWord, len(userWord))
+                # check if letters are sequential as looping through letters in the input
+                if (ord(userWord[i]) + 1) == (ord(userWord[i+1])):
+                    # print(ord(userWord[i]), (ord(userWord[i+1])))
+                    j += 1 # increment inner counter only when two letters are sequential
+                    # print(sequential, i, j)
+                    if j == 3:
+                        # if found three sequential letters in a row, 
+                        # return positive result and end processing
+                        sequential = True
+                        print(f"{entry} has three sequential letters.", sequential)
+                        break
+                else:
+                    j = 1 # reset counter to start with first letter
+                print(f"{entry} does not have three sequential letters.", sequential)
     else:
         print("Input words with letters only.\n")
 
     choice = input("Would you like to try again? (Y/N) ")
 # %%
-word = 'abczazfzdfg'
-sequential = False
-i,j = 0, 0
-for i in range(len(word)-1):
-    if (ord(word[i])+1) == ord(word[i+1]):
-        print(sequential, i, j)
-        j += 1
-        print(i,j)
-        if j == 3:
-            print(j)
-            sequential = True
-    else:
-        j=1
-        # continue
-sequential
-# %%
-ord(l)
-# %%
-l = 'abc'
-all(ord(l[i+1])-ord(l[i]) == 1 for i in range(len(l)-1))
+def userInput():
+    # header telling user the purpose of the program and taking input
+    print("This program will determine if your phrase has three letters in sequential order.")
+    entry = (input("Enter you word or phrase:\n"))
+    userWord = entry.lower().replace(" ","")  
+    if len(userWord)<3:  # make sure the word is long enough for proecssing
+        print("You need to enter a word or phrase longer with 3 or more characters.")
+    elif (userWord.isalpha() == False):  # error handling for non-strings
+        print("Input words with letters only.\n")
+        entry = False
+    else: pass
+    return entry, userWord
 
-# %%
-word = input('enter word: ')
-sequential = False
-i,j = 0,1
-for i in range(len(word)-1):
-    if (ord(word[i]) + 1) == (ord(word[i+1])):
-        print(ord(word[i]), (ord(word[i+1])))
-        j += 1
-        print(sequential, i, j)
-        if j == 3:
-            sequential = True
-    else:
-        j = 1
-        continue
-sequential
-# %%
-word = 'ancde'
-sequential = False
-i,j = 0, 0
-for i in range(len(word)-1):
-    if word[i] < word[i+1]:
-        print(sequential, i, j)
-        j += 1
-        if j == 3:
-            sequential = True
-    else:
-        j = 1
-        continue
-sequential
+def result(userWord):
+    sequential = False
+    i,j = 0,1 # initialize counters for loops
+    for i in range(len(userWord)-1): # set length of loop to user input
+        # print(i, userWord, len(userWord))
+        # check if letters are sequential as looping through letters of the input
+        if (ord(userWord[i]) + 1) == (ord(userWord[i+1])):
+            # print(ord(userWord[i]), (ord(userWord[i+1])))
+            j += 1 # increment inner counter only when two letters are sequential
+            # print(sequential, i, j)
+            if j == 3:
+                # if found three sequential letters in a row, 
+                # return positive result and end processing
+                sequential = True
+                # print(f"{entry} has three sequential letters.", sequential)
+                break
+        else:
+            j = 1 # reset counter to start with first letter 
+    return sequential
+
+def output(expression, entry):
+    if expression == True:
+        print(f"{entry} has three sequential letters.", expression)
+    else: 
+        print(f"{entry} does not have three sequential letters.", expression)
+    return
+
+def main():
+    choice = "Y"
+    while choice.upper() == "Y":
+        entry, compressedEntry = userInput()
+        if entry == False:
+            continue
+        valid = result(compressedEntry)
+        output(valid,entry)
+        choice = input("Would you like to try again? (Y/N) ")
+    return
+
+if __name__ == "__main__":
+    main()
 # %%
