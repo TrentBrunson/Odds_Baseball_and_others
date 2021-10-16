@@ -28,8 +28,6 @@ if counter % 2 == 0:
 else:
     median = scoreList[mid+1]
 
-# print(counter,total,mean,median,top, bottom)
-
 scoreSum = 0
 for score in scoreList:
     scoreSum = scoreSum + (score - mean)**2
