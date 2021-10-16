@@ -93,8 +93,6 @@ print(gradeDict)
 with open("data/Scores-and-Letter-Grades.txt", "w", newline='') as file:
     csv.writer(file, delimiter=",").writerows(newList)
     # file.writelines("%s\n" % item for item in newList)
-    # file.writelines("\n".join(str(row) for row in newList))
-    # file.write('\n'.join(','.join(map(str,row)) for row in file))
     # for row in newList:
     #     for item in row:
     #         file.writelines(f"{item},")
