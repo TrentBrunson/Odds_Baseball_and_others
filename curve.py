@@ -20,6 +20,7 @@ HINT: A dictionary is an efficient tool for accumulating counts.
 • Display a grade distribution table (see Figure 2)
 """
 #%%
+import csv
 scoreList = []
 file = "data\Scores.txt"
 with open (file) as f:
@@ -27,7 +28,7 @@ with open (file) as f:
         line = int(line.strip())
         scoreList.append(line)
 scoreList.sort()
-# %%
+
 total, counter = 0, 0
 for score in scoreList:
     counter += 1
@@ -44,7 +45,7 @@ if counter % 2 == 0:
 else:
     median = scoreList[mid+1]
 
-print(counter,total,mean,median,top, bottom)
+# print(counter,total,mean,median,top, bottom)
 
 scoreSum = 0
 for score in scoreList:
@@ -89,14 +90,19 @@ gradeDict.update({'C':countC})
 gradeDict.update({'D':countD})
 gradeDict.update({'F':countF})
 print(gradeDict)
-with open("data/Scores-and-Letter-Grades.txt", "w") as file:
-    for row in newList:
-        # file.writelines("%s\n" % item for item in newList)
-        file.writelines(row)
-#%%
-
+with open("data/Scores-and-Letter-Grades.txt", "w", newline='') as file:
+    csv.writer(file, delimiter=",").writerows(newList)
+    # file.writelines("%s\n" % item for item in newList)
+    # file.writelines("\n".join(str(row) for row in newList))
+    # file.write('\n'.join(','.join(map(str,row)) for row in file))
+    # for row in newList:
+    #     for item in row:
+    #         file.writelines(f"{item},")
+    #     file.write("\n")
 
 print(
+    f"This program reads a list of grades and computes the descriptive statistics\n"
+    f"and writes the grades on the curve output to a new file.\n\n"
     f"Count:\t\t\t{counter}\n"
     f"Average:\t\t{round(mean,2)}\n"
     f"Standard deviation:\t{round(stdev,2)}\n"
@@ -111,15 +117,9 @@ print(
     f"A:  {gradeDict['A']}\tB:  {gradeDict['B']}\tC:  {gradeDict['C']}\tD:  {gradeDict['D']}\tF:  {gradeDict['F']}\t"
 )
 # %%
-
+print(*newList)
 # %%
-mid = len(scoreList)/2
-mid
-# %%
-4**2
-
-# %%
-4**(1/2)
-# %%
-13**1/2
+a = ['a,','65,']
+str(a).strip(",")
+print(*a)
 # %%
