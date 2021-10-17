@@ -20,7 +20,7 @@ def rolldice(): #This function gets output for  4-c
     #import csv
     #with open("round.csv", "w", newline="\n") as file:
         #writer = csv.writer(file)
-    with open("round.txt", "w") as wfile:
+    with open("round.csv", "w") as wfile:
                 
         for i in range(1,10001):
             line=""
@@ -103,17 +103,18 @@ def gamblehouse(): #This function gets output for  4-d
                 #writer.writerow(line)
             
             probofDoublesix = 1 - nodoubleSix
-            lofl.append(listc)    
+            lofl.append(line)    
     
 
 def optionC(cdata):
     print(cdata)
-    import csv
-    with open("round.csv", "w", newline="\n") as wfile:
-        writer = csv.writer(wfile)
-        writer.writerow(cdata)
-        #wfile.write(cdata)
-        #wfile.close()
+
+    # import csv
+    # with open("round.csv", "w", newline="\n") as wfile:
+    #     writer = csv.writer(wfile)
+    #     writer.writerow(cdata)
+    #     #wfile.write(cdata)
+    #     #wfile.close()
 
 def displayone(cdata):
     with open("round.txt", "w") as wfile:
@@ -125,7 +126,7 @@ def displayone(cdata):
 def main():
     cdata = rolldice()
     gamblehouse()
-    #displayone(cdata)()
+    displayone(cdata)
     
 
 
