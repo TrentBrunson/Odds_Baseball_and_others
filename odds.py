@@ -3,7 +3,7 @@
 #Program output shows 10000 rounds  and each round has 24 Rolls of dices random output finding double sixes and double anyother same number for both die 
 
 
-
+#%%
 def rolldice(): #This function gets output for  4-c
     import random
     dieOne = 0
@@ -148,3 +148,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# %%
