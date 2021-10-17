@@ -1,0 +1,12 @@
+You just ran a set of 24 rolls, 10,000 times for a total of 240,000 rolls.
+The distribution of values for the first die...fairly equal odds as expected.
+see image ('images\die1_rolls.png')
+The distribution of values for the second die...fairly equal odds as expected.
+see image ('images\die2_rolls.png')
+You rolled doubles 39,806 times, or 16.59% of the time.
+You rolled double sixes 6,577 times, or 2.74% of the time.
+
+In 24 rolls, you typically see double sixes about 49% of the time.
+In your 10,000 sets of 24 dice rolls you rolled double sixes 48.73% of the time.
+Your results are in the range of what is expected.
+

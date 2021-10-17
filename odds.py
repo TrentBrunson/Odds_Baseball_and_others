@@ -206,9 +206,11 @@ def analytics():
         print("Better luck next time.\n\n")
     rollDF.groupby('die1')['die1'].agg(['mean','median','std']).plot.bar()
 
-    import seaborn as sns
-    sns.histplot(rollDF['die1'], bins = 6, legend=False)
-    rollDF["die1"].plot()
+    # import seaborn as sns
+    # sns.histplot(rollDF['die1'], bins = 6, legend=False)
+    # rollDF["die1"].plot()
+    rollDF.groupby('die1')['die1'].agg('count').plot.bar()
+    rollDF.groupby('die2')['die2'].agg('count').plot.bar()
     return
 
 def main():

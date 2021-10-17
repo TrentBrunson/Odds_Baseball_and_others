@@ -1,31 +1,31 @@
-Team,Wins,Losses,Division,Percentage
-Minnesota,101,61,AL Central,0.6234567901234568
-Cleveland,93,69,AL Central,0.5740740740740741
-Chicago White Sox,72,89,AL Central,0.4472049689440994
-Kansas City,59,103,AL Central,0.36419753086419754
-Detroit,47,114,AL Central,0.2919254658385093
-New York Yankees,103,59,AL East,0.6358024691358025
-Tampa Bay,96,66,AL East,0.5925925925925926
-Boston,84,78,AL East,0.5185185185185185
-Toronto,67,95,AL East,0.41358024691358025
-Baltimore,54,108,AL East,0.3333333333333333
-Houston,107,55,AL West,0.6604938271604939
-Oakland,97,65,AL West,0.5987654320987654
-Texas,78,84,AL West,0.48148148148148145
-Los Angeles Angels,72,90,AL West,0.4444444444444444
-Seattle,68,94,AL West,0.41975308641975306
-St. Louis,91,71,NL Central,0.5617283950617284
-Milwaukee,89,73,NL Central,0.5493827160493827
-Chicago Cubs,84,78,NL Central,0.5185185185185185
-Cincinnati,75,87,NL Central,0.46296296296296297
-Pittsburgh,69,93,NL Central,0.42592592592592593
-Atlanta,97,65,NL East,0.5987654320987654
-Washington,93,69,NL East,0.5740740740740741
-New York Mets,86,76,NL East,0.5308641975308642
-Philadelphia,81,81,NL East,0.5
-Miami,57,105,NL East,0.35185185185185186
-Los Angeles Dodgers,106,56,NL West,0.654320987654321
-Arizona,85,77,NL West,0.5246913580246914
-San Francisco,77,85,NL West,0.47530864197530864
-Colorado,71,91,NL West,0.4382716049382716
-San Diego,70,92,NL West,0.43209876543209874
+team name,wins,losses,division,game won percentage
+Minnesota,101,61,AL Central,62.35
+Cleveland,93,69,AL Central,57.41
+Chicago White Sox,72,89,AL Central,44.72
+Kansas City,59,103,AL Central,36.42
+Detroit,47,114,AL Central,29.19
+New York Yankees,103,59,AL East,63.58
+Tampa Bay,96,66,AL East,59.26
+Boston,84,78,AL East,51.85
+Toronto,67,95,AL East,41.36
+Baltimore,54,108,AL East,33.33
+Houston,107,55,AL West,66.05
+Oakland,97,65,AL West,59.88
+Texas,78,84,AL West,48.15
+Los Angeles Angels,72,90,AL West,44.44
+Seattle,68,94,AL West,41.98
+St. Louis,91,71,NL Central,56.17
+Milwaukee,89,73,NL Central,54.94
+Chicago Cubs,84,78,NL Central,51.85
+Cincinnati,75,87,NL Central,46.3
+Pittsburgh,69,93,NL Central,42.59
+Atlanta,97,65,NL East,59.88
+Washington,93,69,NL East,57.41
+New York Mets,86,76,NL East,53.09
+Philadelphia,81,81,NL East,50.0
+Miami,57,105,NL East,35.19
+Los Angeles Dodgers,106,56,NL West,65.43
+Arizona,85,77,NL West,52.47
+San Francisco,77,85,NL West,47.53
+Colorado,71,91,NL West,43.83
+San Diego,70,92,NL West,43.21
