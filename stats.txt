@@ -3,10 +3,21 @@ The distribution of values for the first die...fairly equal odds as expected.
 see image ('images\die1_rolls.png')
 The distribution of values for the second die...fairly equal odds as expected.
 see image ('images\die2_rolls.png')
-You rolled doubles 39,708 times, or 16.55% of the time.
-You rolled double sixes 6,583 times, or 2.74% of the time.
+You rolled doubles 40,132 times, or 16.72% of the time.
+You rolled double sixes 6,803 times, or 2.83% of the time.
 
 In 24 rolls, you typically see double sixes about 49% of the time.
-In your 10,000 sets of 24 dice rolls you rolled double sixes 48.21% of the time.
-Your results are in the range of what is expected.
+In your 10,000 sets of 24 dice rolls you rolled double sixes 50.11% of the time.
 
+Book your flight to Vegas, baby!
+
+Number of double sixes
+in a set of 24 rolls
+~~~~~~~~~~~~~~~~~~~~~~
+# double 6  # times seen
+  0:            4989
+  1:            3566
+  2:            1143
+  3:             262
+  4:              35
+  5:               5
