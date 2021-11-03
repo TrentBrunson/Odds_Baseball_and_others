@@ -1,0 +1,50 @@
+RESULTS OF PROBABILITY OF DOUBLES SIMULATION
+
+***************************************************************************
+
+The probability of rolling double sixes atleast once in 24 rolls is 49.31%.
+This probability supports Blaise Pascal's work.
+
+***************************************************************************
+
+---------  Fairness Validation  ---------
+-----------------------------------------
+
+The dice roll results appear to be fair
+as all values are within +/- .02 of .1667.
+
+View the output below to verify.
+
+      Die Roll Fairness Validation      
+----------------------------------------
+Dice Value     # of Rolls     % of Rolls
+----------     ----------     ----------
+    1            80,089         16.68%  
+    2            79,821         16.63%  
+    3            80,167         16.70%  
+    4            80,143         16.70%  
+    5            79,962         16.66%  
+    6            79,817         16.63%  
+
+***************************************************************************
+
+--- Interesting Stats about the Simulation Results ---
+------------------------------------------------------
+
+Doubles:
+--------
+Doubles occurred at least once in 9,892 rounds.
+Doubles were rolled a total of 40,085 times.
+The max number of times doubles showed up in a single round was 13.
+The average number of doubles per round was 4.1.
+
+Double Sixes:
+-------------
+Doubles occurred at least once in 4,931 rounds.
+Doubles were rolled a total of 6,698 times.
+The max number of times doubles showed up in a single round was 6.
+The average number of doubles per round was 1.4.
+
+Combined:
+---------
+16.71% of the total doubles rolled were double sixes.
